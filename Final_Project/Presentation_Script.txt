@@ -1,0 +1,79 @@
+Problem Formulation
+===================
+
+The end goal of our project is to be able to emulate human behavior using similar input. For example, when a person sees an image on screen they are almost 
+instantly able to formulate a response or action. We want our models to be able to use similar input, that is a single image, to predict the correct actions 
+to take in an actual game.
+
+We will do this by creating computer vision models, both standard and those that incorporate transfer learning. We will use these models to process images 
+displayed on-screen on a frame-by-frame basis. 
+
+Our models will be capable of predicting a total of 3 actions. Those being jump, slide, or no action. These are sent through a softmax activation function 
+in our model’s output layer. We then use the action with the highest probability and perform it in our game.
+
+Experimental Evaluation
+=======================
+
+As can be seen on screen. The performance of our models during hyper-parameter tuning in our genetic algorithm varied. The graph to the left displays a single 
+run for our transfer learning models, and the graph to our right displays the custom models. Each of these runs had equal-sized populations and were trained 
+over 15 generations. The best models created from each technique were almost identical in performance with F1 scores of 0.82667 for transfer learning and 
+0.8212 for our custom CNN models. Of note, this was not our only training attempt and the combined training times between Logan and I is 50+ hours.
+
+On this slide, you can see the make-up and performance of our two best models created from each technique. 
+
+Once again to the left, you can see the performance of our transfer learning model. This model predicted no action with 89% accuracy, jump with 74% accuracy, and 
+slide with 86% accuracy. It had a VGG16 base using the tanH activation function and SGD optimizer. 7 layers in the base model were left trainable and it included 
+7 fully connected layers, excluding the output layer.
+
+To the right, you can see our best custom CNN model. This model predicted both no action and slide with 88% accuracy and jump with 72% accuracy. It was of CNN type 1, 
+a fairly standard CNN makeup with 3 stages of convolution and max-pooling. It also included Relu activation function and was compiled with the SGD optimizer. Lastly, 
+it had 3 fully connected layers, excluding the output layer.
+
+Now, you may have noticed something interesting. The confusion matrixes for these models looks almost identical. This is of course due to the similar F1 score and 
+prediction rates for each model. However, of note is that our best transfer learning models produced by our genetic algorithm included a high number of unfrozen and 
+thus trainable layers. We interpreted this as meaning our best transfer learning models required significant retraining of their existing networks. As a result, we 
+believe that transfer learning was not necessarily ideal for our task and our unique dataset. At least off of VGG16 and MobileNetV2
+
+Lastly, let’s look at some results in our actual games. Of note, all models in the game ran at a simulated 60fps so as to even the playing field as some required more 
+processing time than others. 
+
+Both techniques produced viable models that could complete the game. However, all the models tested that we’re able to complete the game were in the upper 0.7 and 0.8 
+F1 brackets. We tested some lower-scoring models in the interest of experimentation, all these models either got stuck on the first obstacle or failed at another 
+obstacle later in the game. One item we noticed is that our custom CNN models seem slightly more motivated to collect coins.
+
+In addition to testing on the level they were trained on, we created a second level and unleashed our models on that. Important to note, our goal was not to create a 
+generalized model capable of completing any level. Our intent was to train them to be capable of a single complex task that they were trained on. In light of this, 
+we were still curious about what would happen. In brief, all models failed to complete the second level, falling prey to new obstacle combinations. The top models 
+from level 1 were not the best performers in level 2. Some of our slightly lower-scoring F1 models made great progress in the level almost completing it. This showed 
+some degree of generalization as these models were often capable of correctly predicting action on a set of unknown obstacles.
+
+Conclusion
+==========
+
+In conclusion, our transfer learning models showed little improvement over our custom CNN models. We believe this was due to the uniqueness of our dataset resulting 
+in the lack of many suitable pre-trained models for us to use in transfer learning.
+
+Secondly, both strategies produced models capable of completing the game. However only models in the upper 0.7 and 0.8 F1 brackets showed this ability. In addition, 
+our custom models showed a bit more motivation to collect coins in the game.
+
+Next, when unleashed on a new level, our previous best models showed shortcomings. Though our slightly lower scoring models showed some ability to identify and respond
+to unknown situations by progressing further into the new level.
+
+Overall, we accomplished our goal to use computer vision to emulate human behavior. The models we created demonstrated that they could successfully complete a complex 
+task that they were trained for using only a single image as input. In addition, they showed some ability to perform a low level of generalization on unknown tasks.
+
+Demo
+====
+
+Last but not least, as our project was fairly visual in nature, we thought that we would show you a recorded video of one of our best models playing Panda Runner. 
+
+Also, on this slide, you will see a link to the GitHub repository to Panda Runner. Here you can download the game, dataset, and one of our models.
+
+Feel free to check it out!
+
+<play the video...>
+
+That is the end of our presentation! Thank you for your time and we hope you enjoyed our project. If you have any questions feel free to ask!
+
+
+
