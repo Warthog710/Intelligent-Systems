@@ -1,0 +1,64 @@
+Hello and welcome to our presentation on project 1. My name is Quinn roemer and I will be presenting today. In addition to myself
+the project was also worked on by Logan Hollmer
+
+Model/Code Design
+=================
+
+In designing our code to train our models we decided to both tackle the problem seperately and create our own programs. 
+
+We both agreed to setup an automatic script to train our models and test variations of each model.
+
+In vectorizing our data we both took different approaches. These can be seen on screen. with the
+key difference being how many features we decided to keep. For Logan that was 1000 and for my myself 2000.
+
+In addition to this difference Logan decided to keep the total number of reviews for a business as input to his models. This data he
+linearized before saving it.
+
+After preparing our data, we both wrote our automatic scripts to train our models. In both scripts we randomly selected our hyperparamters.
+These were the hidden layer(s) and neuron count, the activation functions used for each layer as well as the optimizer.
+
+However, as before there were some key differences between our ranges. For example I limited by script to between 1 and 3 hidden layers with 
+neuron counts ranging between 10 and 100 with randomly chosen activation functions. Logan on the other hand limited his script to making
+between 0 and 4 hidden layers with between 10 and 200 neurons. His probability for a large number of neurons also decreased as more layers were added.
+Logan's example build function can be seen on screen.
+
+Finding/Results
+===============
+
+Between the two of us we trained about 300 different models with a multitude of hyperparameter differences. 
+
+Logan's top model had an RMSE score of 0.2515 using the on-slide settings.
+My top model has an RMSE score of 0.2499 with the settings you can see on screen.
+
+Of interest, all the top models that were trained by Logan had a single layer. This seemed to suggest that there was not much interaction 
+between his diffrent features that were fed in, as one layer seemed optimal.
+
+In contrast, all of my top models had multiple layers. This suggested that my data had more interaction as more layers seemed optimal. This was probably
+a result of doubling the TF-IDF features.
+
+One item that we noticed while studying the models our code produced was that most of our best models used the same activation function in all the layers.
+This was true for my top 5 models as well as logan's. You can see this on screen.
+
+Task Division, Challenges Encountered, and what we Learned
+==========================================================
+
+As previously stated we both designed fully functioning programs to pre-process, vectorize, and train our models. Logan created three quarters of the report
+and I created this presentation.
+
+Probably the most difficult challenge that we encountered was processing the data on our machines. We had numerous issues with memory and compute time. We resolved
+this by saving our dataframes to disk frequently and loading only when necessary. Something that I practiced in my code was saving my NUMPY arrays as pickled
+data. This allowed the data to be quickly reloaded when needed.
+
+While doing this assignment we learned that more data is genererally better for creating models. We feel that if we were to go back and extract more features
+from the reviews during our vectorization process we would've created better models.
+
+
+
+Thanks for watching my presentation on our project!
+
+
+
+
+
+
+

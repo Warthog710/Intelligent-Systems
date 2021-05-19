@@ -1,0 +1,59 @@
+Intro
+=====
+
+Welcome to my video presentation for CSC180 project 0, personal introductions
+
+About Me
+========
+
+Some quick facts about me, my name is Quinn Roemer (you can just call me Quinn). 
+You can see a picture of me to the left. I am currently 22 years old and 
+am a 4th year Computer Science student that will be graduating in Spring 2021 
+with a Bachelor’s in Computer Science. I enjoy anything to do with computers 
+from building systems to programming games, applications, and even web development.
+
+
+Favorite AI Application
+=======================
+
+One of my favorite AI applications that I have come across in my personal research 
+is OpenAI’s DOTA 2 bots. What I find extremely impressive about this AI 
+application is its ability to work as a team to defeat human teams that are 
+commonly seen as pros at the game.
+
+If you want to see these AI bots in action they are some pretty neat videos you
+can find on YouTube.
+
+How it works
+============
+
+These bots from OpenAI were trained over a period of 10 months using self-play 
+reinforcement (meaning they played against themselves with some human guidance). 
+The Bot works by examining the game state every 4 frames and performing a 
+discrete action from moving around its character(s), attacking the enemy, 
+or purchasing upgrades.
+
+The sheer amount of computing power that was required to train these bots was
+absoolutely huge.
+
+AI I would like to build
+========================
+
+Some AI applications that I would like to build in the future are Automonous 
+vehicles (because of the widespread impacts such technology would have 
+on our world) 
+
+and Game AI (because the unique problem it poses due to the time constraints 
+on computation I.E every frame or so…)
+
+Fun Facts
+=========
+
+Some fun facts about me! 
+I am currently in the processing of moving to Redding, CA.
+I used to volunteer at a soup kitchen where I served food to the homeless
+I interned at the Sac Department of Utiltilies for about 1 year
+I earned my associates in Computer Science at FLC before transferring to Sac State
+
+Thanks for watching my presentation and I am looking forward to learning more
+about you in your video!

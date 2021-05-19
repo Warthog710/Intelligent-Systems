@@ -1,0 +1,52 @@
+Hello and welcome to our presentation on project 4. My name is Quinn Roemer and I will be presenting today. In addition to myself
+the project was also worked on my Logan Hollmer.
+
+Model/Code Design
+=================
+
+While designing our code to train are models, we, as usaul, decided to tackle the problem seperatley and create our own solutions.
+
+While we had many similarities between our code, one of the differences was in how we wrote our evalution functions. For example,
+I decided to write a function that focused on efficiency. In my function I did not need to examine every unique pair of queens,
+instead considering every queen seperately. This was faciliated with the use of a dictionary.
+
+On the other hand, Logan chose the more obvious route and route and made a function to compare each queen with each other. Since the number of
+possible queens is small, this approach works just fine.
+
+When training our populations, Logan branched out and experimented with different algorithms while I stuck to the eaSimple() algorithm.
+Both of our training functions were capable of working with arbitrary board sizes. The function I created trained until a solution was
+found.
+
+Finding/Results
+===============
+
+Since one of the main objectives of the assignment was to compare the performance of the two representations that we implemented, on
+this slide you can see two populations 64 both trained for the 512 generations. The first one used the position-index-based 
+representation while the second one used the row-index-based representation. As you can see, the performance of each generation varies.
+For example, in the position-index-based representation our initial fitness was very high and continued to flucuate greatly through training.
+On the other hand, the other representation started with a lower fitness and quickly improved to find a solution.
+
+We believe this to be due to the fact that the latter representation is incapable of producing queens along the same row, this being a 
+fundamental fact of all solutions greatly reduced the number of children that could be produced. Thus making the solution easier to find.
+
+For the purpose of experimentation, both myself and Logan experimented with solving the N-Queens problem with higher order. I managed
+to successfully find solutions for 16x16 and 32x32 boards. However, Logans method proved superior, allowing him to find the solution
+for a 124x124 board. He did this by varying the mutation chance, selection tournament size, and using the eaMuPlusLambda() algorithm.
+In addition, he trained with a population of 10k.
+
+
+Task Division, Challenges Encountered, and what we Learned
+==========================================================
+
+For task division, as previously state, both team members fully completed the project. The report was equally split with each of
+us writing half of it. I created and scripted the presentation.
+
+The challenges we encountered were associated with solving boards of higher order. For example, boards larger than 32x32 were
+difficult to solve with changing strategies, and large boards with large populations took several hours to compute.
+
+We learned that row-index-based representation are better since no boards could be generated where multiple queens existed on the
+same row. Also, higher population counts generally produced better results as a more diverse set of genes helped the population
+evolve faster. Lastly, if we were to redo the assignment, we could create a representation that guranteed no queens could be placed
+on the same row or column. We believe this would've further decreaase the time it took to find solutions.
+
+Thanks for watching our presentation on our project! We look forward to seeing yours!
